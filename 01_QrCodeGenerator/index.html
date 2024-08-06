@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qr Code Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 class="heading">QR code generator</h1>
+        <input class="url" name="url" type="url" placeholder="Enter your url" />
+        <div class="buttons">
+          <button class="generate">Generate</button>
+          <button class="save">Save</button>
+        </div>
+
+        <div class="display"></div>
+      </div>
+      <div class="saveHistory">
+        <h1 class="heading">Save History</h1>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
