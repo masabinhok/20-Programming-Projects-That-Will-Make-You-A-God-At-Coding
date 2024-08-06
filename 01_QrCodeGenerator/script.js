@@ -4,6 +4,8 @@ const displayScreen = document.querySelector(".display");
 const saveButton = document.querySelector(".save");
 const saveHistory = document.querySelector(".saveHistory");
 
+const clearButton = document.querySelector(".clear-button");
+
 generateButton.addEventListener("click", () => {
   if (urlInput) {
     let url = urlInput.value;
@@ -29,7 +31,7 @@ function generateQR(url) {
   });
 }
 
-let totalHTML;
+let totalHTML = "";
 
 window.addEventListener("DOMContentLoaded", () => {
   const history = localStorage.getItem("saveHistory");
@@ -41,16 +43,28 @@ window.addEventListener("DOMContentLoaded", () => {
     totalHTML = `
     <h1 class="heading">Save History</h1>
     `;
+    saveHistory.innerHTML = totalHTML;
   }
+});
+
+clearButton.addEventListener("click", () => {
+  localStorage.removeItem("saveHistory");
+  totalHTML = ` <h1 class="heading">Save History</h1>
+    `;
+  saveHistory.innerHTML = totalHTML;
+  console.log("History Cleared!");
 });
 
 saveButton.addEventListener("click", () => {
   const qrcode = displayScreen.innerHTML;
-  const url = urlInput.value;
-
+  let url = urlInput.value;
+  if (!/^https?:\/\//i.test(url)) {
+    url = "https://" + url;
+  }
   const html = `
-    <p class="url-p">${url}</p>
-  ${qrcode}
+          <p class="url-p"><a href="${url}" target="_blank">${url}</a></p>
+          ${qrcode}
+        
 `;
   totalHTML += html;
   saveHistory.innerHTML = totalHTML;

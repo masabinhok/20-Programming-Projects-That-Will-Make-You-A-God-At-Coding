@@ -26,15 +26,24 @@
   align-items: center;
 }
 
-.saveHistory {
+.history-box {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 20px;
   border-radius: 8px;
   background-color: aqua;
-  height: 400px;
+}
+
+.saveHistory {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
   overflow: auto;
+  height: 400px;
+  padding: 10px;
+  width: 300px;
+  overflow-x: hidden;
 }
 
 .heading {
