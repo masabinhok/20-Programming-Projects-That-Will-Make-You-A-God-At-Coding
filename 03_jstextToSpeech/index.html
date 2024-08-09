@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to Speech</title>
+  </head>
+  <body>
+    <div
+      class="rounded-xl bg-white p-6 flex flex-col items-center justify-center max-w-md mx-auto my-10 shadow-lg"
+    >
+      <h1 class="text-2xl font-bold mb-6">Text To Speech</h1>
+      <form action="/convert" method="POST" class="w-full">
+        <label for="text" class="w-full">
+          <p class="text-lg font-medium">Enter text</p>
+          <textarea
+            class="border-2 w-full p-3 resize-none rounded-xl my-2"
+            name="text"
+            id="text"
+            cols="30"
+            rows="5"
+            placeholder="Type your text here..."
+          ></textarea>
+        </label>
+        <label for="select" class="w-full">
+          <p class="text-lg font-medium">Select Voice</p>
+          <select
+            class="w-full p-3 mb-4 border-2 rounded-xl"
+            name="voice"
+            id="select-voice"
+          >
+            <option value="en-US">English</option>
+            <option value="hi-IN">Hindi</option>
+            <option value="es-ES">Spanish</option>
+            <option value="fr-FR">French</option>
+            <option value="de-DE">German</option>
+            <option value="it-IT">Italian</option>
+            <option value="ja-JP">Japanese</option>
+            <option value="ko-KR">Korean</option>
+            <option value="pt-BR">Portuguese</option>
+            <option value="ru-RU">Russian</option>
+            <option value="zh-CN">Chinese</option>
+          </select>
+        </label>
+        <button
+          type="submit"
+          class="bg-blue-800 w-full py-3 text-white font-semibold rounded-xl transition duration-200 hover:bg-blue-900"
+        >
+          Convert To Speech
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
